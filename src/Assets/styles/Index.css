@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --fonte-principal: 'open-sans', sans-serif;
+    --fonte-secundaria:'Luckiest Guy', cursive;
+    --cor-principal: #FFFFFF;
+    --cor-secundaria: #23272A;
+    --cor-background: #F6F6F6;
+}
+
+body{
+    margin: 0;
+    font-family: var(--fonte-principal);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr auto auto; /* Define 6 linhas */
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"; /* Define as áreas principais */
+}
+
+header{
+    display: grid; /* Usa grid layout */
+    grid-template-rows: auto auto; /* Duas linhas: uma para o título e outra para os botões */
+    justify-items: start; /* Alinha os itens à esquerda no mobile */
+    align-items: center; /* Centraliza os itens verticalmente */
+    text-align: left; /* Alinha o texto à esquerda */
+    background-image: url(../Images/header-background.png);
+    background-position: center; /* Centraliza a imagem */
+    background-size: cover;
+    max-width: 100%;
+    height: 505px;
+    margin: 0;
+    color: var(--cor-principal);
+    grid-area: header;
+}
+
+#titulo{
+    font-family: var(--fonte-secundaria);
+    max-width: 100%;
+    font-size: 2rem;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+#subtitulo{
+    font-family: var(--fonte-secundaria);
+    max-width: 100%;
+    font-size: 2rem;
+    font-style: normal;
+}
+
+h2{
+    font-size: 24px;
+    padding: 0;
+    
+}
+
+p{
+    font-size: 16px;
+}
+
+bold{
+    font-weight: normal;
+}
+
+header p{
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    padding: 0 2rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%; 
+    padding: 0 2rem;
+}
+
+.buttons button {
+    padding: 15px 2px; /* Espaçamento interno */
+    border: none; /* Remove bordas padrão */
+    border-radius: 25px; /* Bordas arredondadas */
+    color: white; /* Cor do texto */
+    font-family: var(--fonte-principal); /* Fonte principal */
+    font-size: 1rem; /* Tamanho do texto */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar por cima */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animações suaves */
+    width: 100%;
+    min-width: 25rem;
+    justify-content: center;
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+.buttons button:hover {
+    background-color: #4752C4; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento no tamanho */
+}
+
+.buttons button:active {
+    background-color: #3C45A5; /* Cor ao clicar */
+    transform: scale(0.95); /* Leve redução no tamanho */
+}
+
+#baixar{
+    color: var(--cor-secundaria);
+    background-color: var(--cor-principal);
+}
+
+#abrir{
+    color: var(--cor-principal);
+    background-color: var(--cor-secundaria);
+}
+
+img{
+    max-width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove o espaço em branco abaixo da imagem */
+}
+
+.container {
+    display: grid; /* Usa grid layout */
+    grid-template-columns: 1fr; /* Uma única coluna para mobile */
+    gap: 1rem; /* Espaçamento entre os elementos */
+    margin-top: 2rem;
+    padding: 0 2rem;
+    justify-items: start; /* Alinha os itens à esquerda */
+    align-items: start; /* Alinha os itens no topo */
+    text-align: left; /* Alinha o texto à esquerda */
+    color: var(--cor-secundaria);
+}
+
+.container1{
+    display: grid; /* Usa grid layout */
+    grid-template-columns: 1fr; /* Uma única coluna para mobile */
+    gap: 1rem; /* Espaçamento entre os elementos */
+    margin-top: 2rem;
+    padding: 2rem;
+    justify-items: start; /* Alinha os itens à esquerda */
+    align-items: start; /* Alinha os itens no topo */
+    text-align: left; /* Alinha o texto à esquerda */
+    background-color: var(--cor-background); /* Cor de fundo */ 
+    color: var(--cor-secundaria);
+}
+
+.container picture {
+    width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
+}
+
+.main{
+    display: grid; /* Usa grid layout */
+    grid-template-rows: repeat(3, 1fr) 2fr;
+    grid-template-areas:
+    "primeiro"
+    "segundo"
+    "terceiro"
+    "quarto"; /* Define as áreas principais */
+    gap: 1rem; /* Espaçamento entre os elementos */
+    margin-top: 2rem;
+    padding: 0 2rem;
+    justify-items: start; /* Alinha os itens à esquerda */
+    align-items: start; /* Alinha os itens no topo */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+#primeiro{
+    grid-area: primeiro;
+}
+
+#segundo{
+    grid-area: segundo;
+}
+#terceiro{
+    grid-area: terceiro;
+}
+#quarto{
+    grid-area: quarto;
+}
+
+footer{
+    display: flex;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 134px;
+    grid-area: footer;
+}
+
+@media (min-width: 768px) {
+    header{ 
+        justify-items: center;
+        align-items: center;
+        text-align: center; 
+    }
+    
+    header p{
+        padding: 0 20%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* Centraliza os botões horizontalmente */
+        margin: 0%;
+    }
+
+    .buttons button {
+        min-width: unset;
+        
+    }
+
+    #baixar{
+        width: 205px;
+    }
+    
+    #abrir{
+        width: 281px;
+    }
+
+    #primeiro, #segundo, #terceiro{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        justify-content: center; /* Centraliza os filhos verticalmente */
+        align-items: center; /* Centraliza os itens verticalmente */
+    }
+    #segundo{
+        grid-area: segundo;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+        "text-div img-div"; /* Define as áreas principais */
+    }
+    #segundo .img-div {
+        grid-area: img-div; /* Associa a imagem à área "img-div" */
+        justify-self: center; /* Centraliza a imagem horizontalmente */
+        align-self: center; /* Centraliza a imagem verticalmente */
+        max-width: 100%; /* Garante que a imagem não ultrapasse o espaço */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+    
+    #segundo .text-div {
+        grid-area: text-div; /* Associa o texto à área "text-div" */
+        justify-self: start; /* Alinha o texto à esquerda */
+        align-self: center; /* Centraliza o texto verticalmente */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    #quarto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        padding: 0 15%;
+    }
+
+    .img-div{
+        max-width: 100%;
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+    .container, .container1{
+        padding: 0 15%;
+    }
+
+    .text-div {
+        display: flex; /* Define o layout como flexbox */
+        flex-direction: column; /* Organiza os elementos em coluna */
+        height: 100%; /* Garante que a altura ocupe 100% do elemento pai */
+        justify-content: center; /* Centraliza os itens verticalmente */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        gap: 2rem; /* Espaçamento entre o h2 e o p */
+        padding: 2rem 0; /* Espaçamento interno opcional */
+    }
+
+    .text-div h2{
+        font-size: 2rem;
+        text-decoration: solid;
+    }
+}
